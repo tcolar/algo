@@ -5,7 +5,6 @@ package algo
 import (
 	"fmt"
 	"log"
-	"strings"
 )
 
 // Reverse the list "in place"
@@ -30,30 +29,4 @@ func (l *List) print() {
 		e = e.Next
 	}
 	log.Print(s)
-}
-
-// Exercise: Check whether the list is of the form "abcdeXedcba", using a stack
-// "Palindrome" separated with 'X' in the middle
-func Palindromic(s string) bool {
-	l := List{}
-	if len(s) == 0 || !strings.Contains(s, "X") {
-		return false
-	}
-	stacking := true
-	for _, c := range s {
-		// stacking until 'X'
-		if stacking {
-			if c != 'X' {
-				l.Push(c)
-			} else {
-				stacking = false
-			}
-		} else {
-			// Popping back in reverse order should match rest of string
-			if l.Length == 0 || l.Pop() != c {
-				return false
-			}
-		}
-	}
-	return l.Length == 0
 }
