@@ -75,6 +75,16 @@ func TestListReverse(t *testing.T) {
 	check(l.ToSlice()[2], 1)
 }
 
+func TestPalindromic(t *testing.T) {
+	check(Palindromic(""), false)
+	check(Palindromic("?"), false)
+	check(Palindromic("X"), true)
+	check(Palindromic("abcX123"), false)
+	check(Palindromic("abcXcb"), false)
+	check(Palindromic("abcXcba123"), false)
+	check(Palindromic("abcXcba"), true)
+}
+
 func check(v1 interface{}, v2 interface{}) {
 	if v1 != v2 {
 		log.Print(v1)

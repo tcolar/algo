@@ -2,10 +2,7 @@
 
 package algo
 
-import (
-	"fmt"
-	"log"
-)
+import ()
 
 // Linked list simplistic impl ...
 type List struct {
@@ -97,19 +94,6 @@ func (l *List) ToSlice() (slice []interface{}) {
 	return slice
 }
 
-// Reverse the list "in place"
-func (l *List) Reverse() {
-	e := l.Root
-	var prev *elem // nil to start
-	for e != nil {
-		next := e.Next // temp save "next"
-		e.Next = prev
-		prev = e
-		e = next
-	}
-	l.Root = prev
-}
-
 // "internal" method to get a list element
 func (l *List) elemAt(index int) *elem {
 	elem := l.Root
@@ -117,17 +101,6 @@ func (l *List) elemAt(index int) *elem {
 		elem = elem.Next
 	}
 	return elem
-}
-
-// print the list for testing / debugging
-func (l *List) print() {
-	s := ""
-	e := l.Root
-	for e != nil {
-		s += fmt.Sprintf("%d ,", e.Val) // assume klist of ints
-		e = e.Next
-	}
-	log.Print(s)
 }
 
 // List element
