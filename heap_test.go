@@ -18,6 +18,7 @@ func TestHeap(t *testing.T) {
 	h.Push(2)
 	h.Push(9)
 	validateMaxHeap(h.heap, 0, 9999999999, "")
+	log.Print(h.heap)
 }
 
 func validateMaxHeap(heap []int, index int, maxVal int, depth string) {
