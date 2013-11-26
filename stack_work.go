@@ -7,7 +7,7 @@ import (
 )
 
 // Exercise: Check whether the string is of the form "abcdeXedcba", using a stack
-// Meaning a "Palindrome" separated with 'X' in the middle
+// Meaning a "Palindrome" separated with an 'X' in the middle
 func Palindromic(s string) bool {
 	l := List{} // My test stack is implemented on a list
 	if len(s) == 0 || !strings.Contains(s, "X") {
