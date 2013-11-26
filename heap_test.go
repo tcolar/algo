@@ -18,16 +18,6 @@ func TestHeap(t *testing.T) {
 	h.Push(2)
 	h.Push(9)
 	validateMaxHeap(h.heap, 0, 9999999999, "")
-
-	// Test heap sort
-	slice := []int{7, 2, 5, 6, 4, 9, 3, 1, 8}
-	HeapSort(slice)
-	validateMaxHeap(h.heap, 0, 9999999999, "")
-	for i, v := range slice {
-		if i != v-1 {
-			log.Fatal("Failed heap sort")
-		}
-	}
 }
 
 func validateMaxHeap(heap []int, index int, maxVal int, depth string) {
