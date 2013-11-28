@@ -8,18 +8,22 @@ is the kind of stuff asked in interviews but not necessarely used everyday in th
 * Stack
 * Heap
 - Tree
-  - Binary search
 - Graph
   - Dijkstra
+- Hash
 
 - Sorts / Big O
-  - Bubble sort -> On2 / On2
+  - Bubble sort -> On2 / On2 -> useless
   - Insertion sort -> On2 / On2
   - Selection sort -> On2 / On2
   - Quicksort -> OnLogn / On2
   - Merge sort -> Onlogn / Onlogn can parallel
   * Heap sort -> OnLogn / OnLogn
   - Radix / Bucket sort -> Onk
+  - Introsort -> Quicksort / heapsort
+
+- Search
+  * Binary search
 
 - Concurrency
   - Go mutex
