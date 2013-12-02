@@ -26,8 +26,8 @@ is the kind of stuff asked in interviews but not necessarely used everyday in th
   * Binary search
 
 - Concurrency
-  - Go mutex
-  - Go routines / channels
+  * Go mutex
+  * Go routines / channels
 
 - Design Patterns
 
