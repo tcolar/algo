@@ -29,5 +29,13 @@ is the kind of stuff asked in interviews but not necessarely used everyday in th
   * Go mutex
   * Go routines / channels
 
-- Design Patterns
+* Design Patterns
+  * Strategy -> Multiple implemtations behing interface decide which to use at runtime
+  * Adater -> Basically a wrapper to adapt a model/API to another
+  * Factory -> Create specific instances of an interface depending of params
+  * Decorator -> Wrap model and "decorate" it with extra or modified features
+  * Singleton -> Single instance
+  * Iterator -> ... easy :)
+  * Builder ->  Construct object in several steps (add behavior). DSL's
+  * Memento -> Typically do / undo ()~ stack
 

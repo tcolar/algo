@@ -49,6 +49,7 @@ func TestMutex(t *testing.T) {
 				atomic.AddInt64(&total2, toAdd)
 
 				// Keep scheduler happy
+				// Note: Possibly no longer needed as of Go 1.2
 				runtime.Gosched()
 			}
 		}()
