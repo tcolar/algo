@@ -18,22 +18,14 @@ less than x come before all nodes greater than x.
 # Trees/ graphs
 4.1 impl a func to check if a bin tree is balanced.
 blanaced tree is defines as a tree such as heighth of 2 subtrees of any node
-\never differ by more than one
+never differ by more than one
 4.2 Given a directed graph design an algo to find if their is a route betwen 2 nodes
 4.5 Implement a funtion to check if a binary tree is a binary search tree
-
-# Bit manipulation
-5.3 Given a positive integer print the next smalest and next largest number that
-have the same number of 1 bits in heir binary representation
-5.4 explain this code: ((n & (n-1) == 0)
-5.6 write a prog to swap odd and even bits in an integer  with as few instructions
-as possible
 
 # Brain teasers
 6.3:  One 5quarts jug, one 3quarts and water. come up with 4 quarts of water.
 
 # Math and probability
-7.4 write methods to implement *, / and - for integers using only '+' ops.
 7.7 Design algo to find kth number such as only prime factors are 3,5,7
 
 # Recursion / dynamic prog.
@@ -44,14 +36,14 @@ implement method to count how many ways he can run up the stairs for n.
 # scale
 10.6 if you where designing a web crawler how would you avoid getting n infinite loop
 
-# sorting & seraching
+# sorting & searching
 11.2 write method to sort array of strings so all anagrams are next to each other
 11.4 How would you sort 20GB file with one string per line.
 11.6 given n*m matrix in which rows and cols are sorted in asc order write method to
 find an element
 
 # Extra
-17.2 algo to find if somebody wn tic tac toe
+17.2 algo to find if somebody won tic tac toe
 17.12 algo to find pair of ints in an array which sum to given value
 18.1 func  to add 2 numbers without using +
 18.6 func to find smallest 1 million numbers out of 1 billion(memory fits 1 billion)
