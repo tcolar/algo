@@ -1,6 +1,6 @@
 # Arrays
 1.1 implement an algo to determine if a string has all unique chars. What if you cannot
-use an additiona data struct ?
+use an additional data struct ?
 1.6 given an image represented by an N*M matrix where each pixel in the img is 4
 bytes, write a method to rotate the image by 90 degrees. Can you do it in place ?
 
