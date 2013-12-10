@@ -3,6 +3,7 @@
 package algo
 
 import (
+	"log"
 	"testing"
 )
 
@@ -13,6 +14,15 @@ func TestK2Last(t *testing.T) {
 		l.Append(i)
 	}
 	check(K2Last(&l, 10), 14)
+
+}
+
+// 18.2 Shuffle perfectly a deck of cards (52) using a random # generator that is perfect
+func TestShuffle(t *testing.T) {
+	deck := CardDeck52()
+	deck.Shuffle()
+	log.Print(deck.Cards)
+	log.Print(len(deck.Cards))
 }
 
 // Find it in o(n) - One pass
