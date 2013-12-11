@@ -16,7 +16,7 @@ less than x come before all nodes greater than x.
 
 # Trees/ graphs
 4.1 impl a func to check if a bin tree is balanced.
-blanaced tree is defines as a tree such as heighth of 2 subtrees of any node
+balnaced tree is defined as a tree such as heighth of 2 subtrees of any node
 never differ by more than one
 4.2 Given a directed graph design an algo to find if their is a route betwen 2 nodes
 4.5 Implement a funtion to check if a binary tree is a binary search tree
@@ -44,3 +44,6 @@ find an element
 18.6 func to find smallest 1 million numbers out of 1 billion(memory fits 1 billion)
 18.8 n*m matrix of postive and negative numbers find submatrix with largest sum.
 
+# Others:
+- Write Itoa function
+- Get robot out of maze (robot can ony turn right or go forward)
