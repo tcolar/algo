@@ -47,7 +47,7 @@ func ReceiveShots(goalie *Goalie) {
 	var skater string
 	ok := true
 	for ok {
-		// golaie recives shots
+		// goalie recives shots
 		if skater, ok = <-goalie.PuckChannel; ok {
 			// randomly makes saves based on save percentage
 			if rand.Int()%100 >= goalie.SavePct {

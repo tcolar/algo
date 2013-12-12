@@ -12,11 +12,11 @@ less than x come before all nodes greater than x.
 
 # Stack / Queues
 3.1 describe how you could use a single array to implement 3 stacks
-3.5 Implement a quque class which implements a queue using 2 stacks
+3.5 Implement a queue class which implements a queue using 2 stacks
 
 # Trees/ graphs
 4.1 impl a func to check if a bin tree is balanced.
-balnaced tree is defined as a tree such as heighth of 2 subtrees of any node
+baanced tree is defined as a tree such as heighth of 2 subtrees of any node
 never differ by more than one
 4.2 Given a directed graph design an algo to find if their is a route betwen 2 nodes
 4.5 Implement a funtion to check if a binary tree is a binary search tree
@@ -25,12 +25,12 @@ never differ by more than one
 7.7 Design algo to find kth number such as only prime factors are 3,5,7
 
 # Recursion / dynamic prog.
-9.1 a child running up staird with n steps and hope 1 to or 3 steps.
+9.1 a child running up stairs with n steps and either hop 1 to or 3 steps.
 implement method to count how many ways he can run up the stairs for n.
 9.5 Write a method to return all permutations of a string
 
 # scale
-10.6 if you where designing a web crawler how would you avoid getting n infinite loop
+10.6 if you where designing a web crawler how would you avoid getting in infinite loop
 
 # sorting & searching
 11.2 write method to sort array of strings so all anagrams are next to each other
