@@ -19,7 +19,6 @@ less than x come before all nodes greater than x.
 baanced tree is defined as a tree such as heighth of 2 subtrees of any node
 never differ by more than one
 4.2 Given a directed graph design an algo to find if their is a route betwen 2 nodes
-4.5 Implement a funtion to check if a binary tree is a binary search tree
 
 # Math and probability
 7.7 Design algo to find kth number such as only prime factors are 3,5,7
@@ -47,3 +46,11 @@ find an element
 # Others:
 - Write Itoa function
 - Get robot out of maze (robot can ony turn right or go forward)
+
+Notes:
+- Ask questions
+- Vizualize / Draw
+- Talk through thinking
+- Take my time
+
+
