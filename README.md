@@ -13,10 +13,10 @@ is the kind of stuff asked in interviews but not necessarely used everyday in th
 - Hash
 
 - Sorts / Big O
-  - Bubble sort -> On2 / On2 -> useless
-  - Insertion sort -> On2 / On2
-  - Selection sort -> On2 / On2
-  - Quicksort -> OnLogn / On2
+  - Bubble sort -> On2 / On2 -> swap with neihboor again and again -> useless
+  - Insertion sort -> On2 / On2 from 0 to n take lement and move to proper place in beginnging of sorted part
+  - Selection sort -> On2 / On2. from o to n: find smallest element and move it to n
+  - Quicksort -> OnLogn / On2.
   - Merge sort -> Onlogn / Onlogn can parallel
   * Heap sort -> OnLogn / OnLogn
   - Radix / Bucket sort -> Onk
