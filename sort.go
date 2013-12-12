@@ -2,9 +2,7 @@
 
 package algo
 
-import (
-	"log"
-)
+import ()
 
 // Heap sort an array (in place)
 func HeapSort(slice []int) {
