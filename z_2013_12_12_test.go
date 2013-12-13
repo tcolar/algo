@@ -8,13 +8,16 @@ import (
 )
 
 func TestNQueens(t *testing.T) {
-	queens := &[]Pos{}
-	NQueens(10, 0, queens)
+	queens := []Pos{}
+	n := 9
+	result := NQueens(n, 0, queens)
+	PrintQueens(n, result)
 }
 
-// I know for a n*n matrix with N queen their has to be exactly one queen
+// I Figured out that for a n*n matrix with n queen their has to be exactly one queen
 // per row and per column (because of queen property of "capturing" whole row and col)
-func NQueens(n int, row int, queens *[]Pos) {
+func NQueens(n int, row int, queens []Pos) []Pos {
+	found := false
 	if n < 4 {
 		log.Fatal("Can't be solved for n<4")
 	}
@@ -27,16 +30,19 @@ func NQueens(n int, row int, queens *[]Pos) {
 					Row: row,
 					Col: col,
 				}
-				*queens = append(*queens, q)
+				queens = append(queens, q)
 				//log.Printf("Added queen %d at row:%d, col:%d", len(*queens), row, col)
-				if len(*queens) == n {
-					// Found a solution print it
-					PrintQueens(n, queens)
-					// TODO: Break recursion / unwindd stack cleanly
-					log.Fatal("We are done") // Ugly hack to stop the recursion
+				if len(queens) == n {
+					// Found a solution
+					found = true
+					return queens
 				} else if row+1 < n {
 					//Recurse to the next row only if we found a queen otherwise we already failed
-					NQueens(n, row+1, queens)
+					queens = NQueens(n, row+1, queens)
+					// if solution found during recusrion we are done
+					if found {
+						return queens
+					}
 				}
 				break
 			}
@@ -44,20 +50,20 @@ func NQueens(n int, row int, queens *[]Pos) {
 		// If we failed to find enough queens we need to try starting from a differrent
 		// position(col) in the base row
 		// Need to clear the queens at or bellow row to reset
-		// creating a new list without those queens (innefficient but ok)
-		nq := []Pos{}
-		for _, q := range *queens {
-			if q.Row < row {
-				nq = append(nq, q)
+		if len(queens) != n {
+			for i, q := range queens {
+				if q.Row >= row {
+					queens = append(queens[:i], queens[i+1:]...)
+				}
 			}
 		}
-		queens = &nq
 	}
+	return queens
 }
 
 // Check whether a position is safe from all queens so far
-func IsOpen(queens *[]Pos, row int, col int) bool {
-	for _, q := range *queens {
+func IsOpen(queens []Pos, row int, col int) bool {
+	for _, q := range queens {
 		// If col already owned by another queen
 		if q.Col == col {
 			return false
@@ -79,10 +85,10 @@ func abs(nb int) int {
 }
 
 // Pretty print the result
-func PrintQueens(n int, queens *[]Pos) {
+func PrintQueens(n int, queens []Pos) {
 	log.Println()
 	board := [15][15]bool{} // Hardoded size to test
-	for _, q := range *queens {
+	for _, q := range queens {
 		board[q.Row][q.Col] = true
 	}
 	for r := 0; r != n; r++ {
