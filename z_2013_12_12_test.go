@@ -7,6 +7,11 @@ import (
 	"testing"
 )
 
+type Pos struct {
+	Row int
+	Col int
+}
+
 func TestNQueens(t *testing.T) {
 	queens := []Pos{}
 	n := 9
@@ -14,6 +19,9 @@ func TestNQueens(t *testing.T) {
 	PrintQueens(n, result)
 }
 
+// The N queen problem is that we have to place N queens on a N*N chess baord such
+// as they don't attack one  other (This is guaranteed to works for N>=4)
+// Goal of exercise it to find the first solution for a given N
 // I Figured out that for a n*n matrix with n queen their has to be exactly one queen
 // per row and per column (because of queen property of "capturing" whole row and col)
 func NQueens(n int, row int, queens []Pos) []Pos {
@@ -22,10 +30,12 @@ func NQueens(n int, row int, queens []Pos) []Pos {
 		log.Fatal("Can't be solved for n<4")
 	}
 	// For any given row we must find a place to place a queen (since one per row/col)
+	// We need to try placing the first Queen at different location in the row
+	// until it works out
 	for colOffset := 0; colOffset != n; colOffset++ {
 		for col := colOffset; col != n; col++ {
 			if IsOpen(queens, row, col) {
-				// found an open position for queen, add it
+				// found an open position for our queen, add it
 				q := Pos{
 					Row: row,
 					Col: col,
@@ -33,23 +43,24 @@ func NQueens(n int, row int, queens []Pos) []Pos {
 				queens = append(queens, q)
 				//log.Printf("Added queen %d at row:%d, col:%d", len(*queens), row, col)
 				if len(queens) == n {
-					// Found a solution
+					// Found a solution, we are done
 					found = true
 					return queens
 				} else if row+1 < n {
-					//Recurse to the next row only if we found a queen otherwise we already failed
+					//Recurse to the next row only if we found a queen in the current row
+					// otherwise we already failed
 					queens = NQueens(n, row+1, queens)
 					// if solution found during recusrion we are done
 					if found {
 						return queens
 					}
 				}
-				break
+				break // since we found this row's queen, we can reak out of this loop
 			}
 		}
-		// If we failed to find enough queens we need to try starting from a differrent
-		// position(col) in the base row
-		// Need to clear the queens at or bellow row to reset
+		// If we failed to find enough queens we will try starting from a differrent
+		// position(colOffset) in the base row
+		// But first we need to clear the "failed" queens at or bellow the current row
 		if len(queens) != n {
 			for i, q := range queens {
 				if q.Row >= row {
@@ -84,7 +95,7 @@ func abs(nb int) int {
 	}
 }
 
-// Pretty print the result
+// Utility method to pretty print the result as an ASCII chessboard
 func PrintQueens(n int, queens []Pos) {
 	log.Println()
 	board := [15][15]bool{} // Hardoded size to test
@@ -102,9 +113,4 @@ func PrintQueens(n int, queens []Pos) {
 		}
 		log.Println(ln)
 	}
-}
-
-type Pos struct {
-	Row int
-	Col int
 }
