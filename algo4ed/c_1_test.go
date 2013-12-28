@@ -121,4 +121,23 @@ func exR1(n int) string {
   return fmt.Sprintf("%s%d%s%d", exR1(n - 3), n ,exR1(n - 2), n)
 }
 
+// 1.1.18
+func misteryA(a int, b int) int {
+  if b == 0 {return 0}
+  if b % 2 == 0 {return misteryA(a+a, b/2)}
+  return misteryA(a+a, b/2) + a
+}
 
+func misteryB(a int, b int) int {
+  if b == 0 {return 1}
+  if b % 2 == 0 {return misteryB(a*a, b/2)}
+  return misteryB(a*a, b/2) * a
+}
+
+func TestOthers(t *testing.T){
+  log.Print(exR1(6))
+  log.Print(misteryA(2,25))
+  log.Print(misteryA(3,11))
+  log.Print(misteryB(2,25))
+  log.Print(misteryB(3,11))
+}
