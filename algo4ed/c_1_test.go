@@ -8,6 +8,7 @@ import (
   "fmt"
   "log"
   "math"
+  "math/big"
   "testing"
 )
 
@@ -138,6 +139,20 @@ func misteryB(a int, b int) int {
   return misteryB(a*a, b/2) * a
 }
 
+// 1.1.19 Fibonacci
+// Returns array of n+1 size with all fib for 0 .. n
+func fib(n int) (result []big.Int) {
+  result = make([]big.Int, n + 1)
+  if n>1 {result[0] = *big.NewInt(0)}
+  if n>2 {result[1] = *big.NewInt(1)}
+  for i:=2 ; i<=n; i++{
+    result[i].Add(&result[i-1], &result[i-2])
+  }
+  return result
+}
+
+
+
 // Those are not real tests, just printouts
 func TestOthers(test *testing.T){
   // 1.1.1
@@ -172,4 +187,6 @@ func TestOthers(test *testing.T){
   log.Print(misteryA(3,11))
   log.Print(misteryB(2,25))
   log.Print(misteryB(3,11))
+  // 1.1.19
+  log.Print(fib(42)[42]) // 267914296
 }
