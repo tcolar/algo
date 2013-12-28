@@ -5,6 +5,7 @@ package algo4ed
 
 import (
   . "github.com/smartystreets/goconvey/convey"
+  "log"
   "testing"
 )
 
@@ -29,10 +30,33 @@ func Test_1_1_5(t *testing.T){
   })
 }
 
+func Test_1_1_13(t *testing.T){
+  array := [][]int{
+    []int{1,2,3,4},
+    []int{11,12,13,14},
+    []int{21,22,23,24},
+  }
+  transpose(array)
+}
+
 func threeInt(a int, b int, c int) bool {
   return a == b && b == c
 }
 
 func xyBetween0And1(x float64, y float64) bool {
   return x >= 0.0 && x <= 1.0 && y >= 0.0 && y <= 1.0
+}
+
+// Print matrix transposition
+func transpose(array [][]int) {
+  for i := 0; i != len(array[0]); i++{
+    log.Print("--")
+    for j := 0; j != len(array); j++{
+      log.Print(array[j][i])
+    }
+  }
+}
+
+func lg(n int){
+  // TBD
 }
