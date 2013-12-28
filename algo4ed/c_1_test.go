@@ -39,6 +39,17 @@ func Test_1_1_13(t *testing.T){
   transpose(array)
 }
 
+func Test_1_1_14(t *testing.T){
+  Convey("Lg", t, func() {
+    So(lg(1), ShouldEqual, 0)
+    So(lg(2), ShouldEqual, 1)
+    So(lg(3), ShouldEqual, 1)
+    So(lg(4), ShouldEqual, 2)
+    So(lg(7), ShouldEqual, 2)
+    So(lg(9), ShouldEqual, 3)
+  })
+}
+
 func threeInt(a int, b int, c int) bool {
   return a == b && b == c
 }
@@ -57,6 +68,12 @@ func transpose(array [][]int) {
   }
 }
 
-func lg(n int){
-  // TBD
+// Find largest int <= base2 log n
+func lg(n int) int {
+  i := 0
+  for n > 1 {
+    n = n >> 1
+    i++
+  }
+  return i
 }
