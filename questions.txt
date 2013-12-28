@@ -52,5 +52,8 @@ Notes:
 - Vizualize / Draw
 - Talk through thinking
 - Take my time
-
+- Find integer that occurs odd number of times in an array
+- Generate list of word permutations that could be created by a phone keypad (2 -> a,b,c) etc...
+- N Queens problem
+- Design a "Premise" data structure (Js)
 

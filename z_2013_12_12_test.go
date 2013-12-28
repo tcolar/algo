@@ -14,9 +14,11 @@ type Pos struct {
 
 func TestNQueens(t *testing.T) {
 	queens := []Pos{}
-	n := 9
-	result := NQueens(n, 0, queens)
-	PrintQueens(n, result)
+	for n := 4; n != 14; n++ {
+		log.Println(n)
+		result := NQueens(n, 0, queens)
+		PrintQueens(n, result)
+	}
 }
 
 // The N queen problem is that we have to place N queens on a N*N chess baord such
