@@ -7,6 +7,7 @@ import (
   . "github.com/smartystreets/goconvey/convey"
   "fmt"
   "log"
+  "math"
   "testing"
 )
 
@@ -122,20 +123,51 @@ func exR1(n int) string {
 }
 
 // 1.1.18
+// Result is : a * b
 func misteryA(a int, b int) int {
   if b == 0 {return 0}
   if b % 2 == 0 {return misteryA(a+a, b/2)}
   return misteryA(a+a, b/2) + a
 }
 
+// Resut is a ^ b
+// a to the power of b
 func misteryB(a int, b int) int {
   if b == 0 {return 1}
   if b % 2 == 0 {return misteryB(a*a, b/2)}
   return misteryB(a*a, b/2) * a
 }
 
-func TestOthers(t *testing.T){
+// Those are not real tests, just printouts
+func TestOthers(test *testing.T){
+  // 1.1.1
+  log.Print((0+15) / 2)
+  log.Print(0.0000002 * 100000000.1)
+  // 1.1.17 a -> aprox sq root
+  t := 9.0
+  for math.Abs(t - 9.0 / t) > 0.001{
+    t = (9.0/t + t) / 2.0
+  }
+  // 1.1.17 b
+  log.Printf("%.5f", t) // ~ Sqrt(9) -> ~ 3
+  sum := 0
+  for i:= 1; i < 1000; i++ {
+    for j:= 0; j < i; j++ {
+      sum++
+    }
+  }
+  log.Print(sum) //  1 + (999 * 998 / 2) -> 499500
+  // 1.1.17 c
+  sum = 0
+  for i:= 1; i < 1000; i *= 2 {
+    for j:= 0; j < 1000; j++ {
+      sum++
+    }
+  }
+  log.Print(sum) // abs(log2n(1000)) * 1000 -> 10 * 1000 -> 10000
+  // 1.1.16
   log.Print(exR1(6))
+  // 1.1.18
   log.Print(misteryA(2,25))
   log.Print(misteryA(3,11))
   log.Print(misteryB(2,25))
