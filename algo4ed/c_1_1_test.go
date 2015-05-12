@@ -178,8 +178,8 @@ func TestOthers(test *testing.T) {
 	for math.Abs(t-9.0/t) > 0.001 {
 		t = (9.0/t + t) / 2.0
 	}
-	// 1.1.17 b
 	log.Printf("%.5f", t) // ~ Sqrt(9) -> ~ 3
+	// 1.1.17 b
 	sum := 0
 	for i := 1; i < 1000; i++ {
 		for j := 0; j < i; j++ {

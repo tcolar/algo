@@ -20,7 +20,7 @@ func (m *Matrix) Set(col int, row int, val int) {
 	m.data[col][row] = val
 }
 
-// Fill in the matrix with vaues from 0 to 99
+// Fill in the matrix with values from 0 to 99
 func (m *Matrix) FillIn() {
 	for i := 0; i != 10; i++ {
 		for j := 0; j != 10; j++ {
