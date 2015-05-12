@@ -1,0 +1,34 @@
+Problem: Please write a function that takes an 8x8 grid of letters and a list of words and returns the longest word, regardless of case, from the list that can be produced from the grid using the following procedure:
+
+Start at any position in the grid, and use the letter at that position as the first letter in the
+candidate word.
+Move to a new position in the grid that would be a valid move for a knight in a game of chess,
+and add the letter at that position to the candidate word. Repeat step 2 any number of times.
+
+For example, if the list of words is [“extra”, “hop”, “networks”] and the grid is:
+
+  1 2 3 4 5 6 7 8
+1 Q W E R T Y U I
+2 O P A S D F G H
+3 R K L Z X C V B
+4 N M T W E R T Y
+5 U I O P A S D F
+6 G H J X L Z X C
+7 V B N M Q W E R
+8 T Y U I O P A S
+
+...then the longest word from the list that can be produced using the rules is “extra”, by starting at the E at position (5, 4), and moving to (4, 6), then (3, 4), (1, 3), and finally (3, 2). Again, note that the match is case-insensitive.
+
+Create a list of words found in Shakespeare’s early comedy, Love’s Labour’s Lost
+(text available at http://shakespeare.mit.edu/lll/full.html).
+Make sure to remove punctuation and ignore case when generating the word list.
+What is the output of your function using this word list on the grid below?
+
+        E X T R A H O P
+        N E T W O R K S
+        Q I H A C I Q T
+        L F U N U R X B
+        B W D I L A T V
+        O S S Y N A C K
+        Q W O P M T C P
+        K I P A C K E T
