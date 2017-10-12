@@ -4,8 +4,8 @@ package main
 
 import "testing"
 
-// Test the example given by ExtraHop
-func TestExtraHop(t *testing.T) {
+// Test the example given for the interview
+func TestInterview(t *testing.T) {
 	grid := readGrid("data/test_grid.txt", 8, 8)
 	words := []string{"EXTRA", "HOP", "NETWORK"}
 	finder := NewWordFinder(grid)
